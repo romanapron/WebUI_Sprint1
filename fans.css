@@ -1,0 +1,82 @@
+.petitionBox{
+    height: 495px;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+}
+.petitionBox>div{
+  height: 165px;
+  background-color: rgb(37,47,62);
+  border-bottom: 3px solid black;
+}
+.headerFans>p{
+    color: crimson;
+font-size: 18px;
+font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+font-weight: 600;
+text-align: center;
+}
+.comment{
+    text-align: center;
+    color: rgb(177,180,186);
+    padding: 0 5%;
+}
+#comment{
+    margin-top: 50px;
+}
+.timeData{
+    display: flex;
+    justify-content: space-between;
+    padding:0 10%;
+    color: rgb(177,180,186);
+    font-style: italic;
+}
+.leaveComment{
+    display: flex;
+}
+.leaveComment textarea:hover{
+    box-shadow: rgb(255, 255, 128) 2px 2px 2px;
+}
+.leaveComment input{
+    height: 20%;
+    align-self: center;
+    background-color: indianred;
+    border: 2px solid white;
+}
+.leaveComment input:hover{
+    cursor: pointer;
+    height: 25%;
+    box-shadow: white 1px 2px 2px;
+    background-color: tomato;
+}
+#comments{
+    width: 50%;
+    height: 85%;
+    margin: 10px 30px;
+}
+.logo{
+  position: relative;
+  animation-name: logo;
+  animation-duration: 7s;
+  animation-iteration-count: infinite;
+}
+@keyframes logo{
+    0%{right: 0px;}
+    50%{right: 200px}
+    100%{right: 0px;}
+}
+.footerBox{
+    animation: pulse 7s infinite;
+}
+@keyframes pulse{
+    0% {
+        background-color: rgb(37,47,62);
+      }
+      50% {
+        background-color: #FF4136;
+        border: 1px solid rgb(37,47,62);;
+      }
+      100%{
+        background-color: rgb(37,47,62);
+      }
+}
