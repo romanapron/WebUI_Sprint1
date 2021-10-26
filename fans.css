@@ -1,15 +1,26 @@
 .petitionBox{
-    height: 495px;
     margin-top: 10px;
     display: flex;
     flex-direction: column;
 }
-.petitionBox>div{
-  height: 165px;
-  background-color: rgb(37,47,62);
-  border-bottom: 3px solid black;
+.form{
+    padding: 10px;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    align-self: center;
 }
-.headerFans>p{
+.form input[type='button']{
+    width: 40%;
+    align-self: center;
+    margin-top: 10px;
+    border-radius: 10px;
+    font-weight: bold;
+    background-color:rgb(177,180,186); ;
+}
+.headerFans>p ,
+.leaveComment{
     color: crimson;
 font-size: 18px;
 font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
@@ -26,7 +37,7 @@ text-align: center;
 }
 .timeData{
     display: flex;
-    justify-content: space-between;
+    flex-direction: column-reverse;
     padding:0 10%;
     color: rgb(177,180,186);
     font-style: italic;
@@ -79,4 +90,16 @@ text-align: center;
       100%{
         background-color: rgb(37,47,62);
       }
+}
+.newName{
+display: flex;
+flex-direction:column;
+justify-content: end;
+}  
+.newName div{
+    display: flex;
+    justify-content: space-between;
+    padding: 0 10%;
+    color: rgb(177,180,186);
+    font-style: italic;
 }

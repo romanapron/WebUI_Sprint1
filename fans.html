@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,6 +9,7 @@
     <link rel="stylesheet" href="mainpage.css">
     <link rel="stylesheet" href="fans.css">
 </head>
+
 <body>
     <div class="mainBox">
         <div class="menuBox">
@@ -17,11 +19,11 @@
                     <li class="dropdown">
                         <a href="#matches" class="dropbtn">Matches</a>
                         <div class="dropdown-content">
-                          <a href="#">Calendar of matches</a>
-                          <a href="#">Next game</a>
-                          <a href="#">Raitings</a>
+                            <a href="#">Calendar of matches</a>
+                            <a href="#">Next game</a>
+                            <a href="#">Raitings</a>
                         </div>
-                      </li>
+                    </li>
                     <li><a href="#news">News</a></li>
                     <li><a href="fans.html">Fans</a></li>
                     <li><a href="#contacts">Contacts</a></li>
@@ -31,33 +33,95 @@
             <div class="logo"><img src="logo-filled.webp" alt="logo"></div>
         </div>
         <div class="petitionBox">
-            <div> 
-                <div class="headerFans"><p >Звернення фанів</p></div>
-                <div class="comment"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla officiis quae fugit consequatur placeat temporibus vitae facere quis cumque ad perspiciatis molestiae 
+            <div>
+                <div class="headerFans">
+                    <p>Звернення фанів</p>
+                </div>
+                <div class="comment"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla officiis quae fugit
+                    consequatur placeat temporibus vitae facere quis cumque ad perspiciatis molestiae
                     minima dolore possimus numquam ex, architecto recusandae at.</div>
                 <div class="timeData">
-                    <div><p>10.10.2021</p></div>
-                    <div><p>Vlad</p></div>
+                    <div>
+                        <p>10.10.2021</p>
+                    </div>
+                    <div>
+                        <p>Vlad</p>
+                    </div>
                 </div>
             </div>
-            <div> 
-                <div id="comment" class="comment">Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis, repudiandae doloribus at adipisci accusamus dicta 
-                    a commodi iusto omnis nulla tenetur est nisi voluptates quae magnam temporibus sapiente illum asperiores!</div>
+            <div>
+                <div id="comment" class="comment">Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis,
+                    repudiandae doloribus at adipisci accusamus dicta
+                    a commodi iusto omnis nulla tenetur est nisi voluptates quae magnam temporibus sapiente illum
+                    asperiores!</div>
                 <div class="timeData">
-                    <div><p>14.10.2021</p></div>
-                    <div><p>Maxym</p></div>
+                    <div>
+                        <p>14.10.2021</p>
+                    </div>
+                    <div>
+                        <p>Maxym</p>
+                    </div>
                 </div>
             </div>
-            <div class="leaveComment">
-                <textarea name="comments" id="comments" >
-                    Leave your comment here...
-                </textarea>
-                <input type="submit" value="Send">
+            <div class="comment">
+                <div id="newComment"></div>
+                <div class="timeData">
+                    <div id="newData"></div>
+                    <div id="newName"></div>
+                </div>
             </div>
-        </div>  
+
+
+            <div class="form" id="form">
+                <p class="leaveComment">You can also leave your comment:</p>
+                Name: <input type="text" id="name" placeholder="enter your name"> <br />
+                Body: <textarea id="fanComment" placeholder="Leave your comment here..." cols="30" rows="10"></textarea>
+                <input type="button" id="addComment" value="Add Comment" onclick="myFunction()">
+            </div>
+        </div>
         <div class="footerBox"></div>
     </div>
-  
-</div>
+
+    </div>
 </body>
+<script>
+
+    function showAll() {
+        var today = new Date();
+        var date = today.getDate() + '.' + (today.getMonth() + 1) + '.' + today.getFullYear();
+
+        let newForm = document.createElement("div");
+        newForm.className = 'comment'
+        let fanComment = document.getElementById('fanComment').value;
+        newForm.innerText += '\n'
+        newForm.append(fanComment);
+
+
+        let newNameBox = document.createElement("div");
+        newForm.className = 'newName'
+        let fanName = document.getElementById('name').value;
+        newNameBox.append(fanName);
+        newNameBox.innerText += '\n'
+        newNameBox.innerHTML += date;
+        newForm.append(newNameBox)
+
+        var element = document.getElementById("newComment");
+        element.append(newForm);
+    }
+
+    function myFunction() {
+        let fanComment = document.getElementById('fanComment').value;
+        let fanName = document.getElementById('name').value;
+        if (fanComment == '' || fanComment == undefined) {
+            alert('fields must not be empty')
+        } else if (fanName == '' || fanName == undefined) {
+            alert('fields must not be empty')
+        } else {
+            showAll();
+        }
+
+    }
+
+</script>
+
 </html>
